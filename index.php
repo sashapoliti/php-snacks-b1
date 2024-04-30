@@ -1,4 +1,5 @@
 <?php
+/* Snack 1 */
 $matches = [
   [
     "home_team" => "Olimpia Milano",
@@ -25,6 +26,16 @@ $matches = [
     "points_guest" => 30
   ]
 ];
+
+/* Snack 2 */
+$access_result = '';
+if (empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])) {
+  
+} else {
+  $name = $_GET['name'];
+  $mail = $_GET['mail'];
+  $age = $_GET['age'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,12 +57,35 @@ $matches = [
   <main class="container">
 
     <!-- Snack1 -->
-    <section>
+    <section class="my-4">
       <ul>
         <?php foreach ($matches as $match) {
           echo "<li>{$match["home_team"]} - {$match["guest_team"]} | {$match["points_home"]} - {$match["points_guest"]}</li>";
-          }?>
+        } ?>
       </ul>
+    </section>
+
+    <!-- Snack2 -->
+    <section class="my-2">
+      <h2 class="text-center mb-4">Verifica Accesso</h2>
+      <form action="index.php" method="get">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="mail">Email:</label>
+          <input type="email" class="form-control" id="mail" name="mail" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Età:</label>
+          <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mt-2 ">Invia</button>
+      </form>
+      <p class="text-center mt-2">
+        <?php echo $access_result; ?>
+      </p>
     </section>
   </main>
 </body>
