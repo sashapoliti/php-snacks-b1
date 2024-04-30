@@ -42,6 +42,46 @@ if (empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])) {
     $access_result = 'Accesso negato';
   }
 }
+
+/* Snack 3 */
+$posts = [
+  '10/01/2019' => [
+    [
+      'title' => '10 Cose da Fare durante le Vacanze Estive',
+      'author' => 'Laura Rossi',
+      'text' => 'Le vacanze estive sono il momento perfetto per rilassarsi e divertirsi. Ecco 10 attività da fare durante le tue vacanze per sfruttare al massimo il tuo tempo libero.'
+    ],
+    [
+      'title' => '5 Idee per Arredare la Tua Camera da Letto',
+      'author' => 'Marco Bianchi',
+      'text' => 'La camera da letto è uno spazio personale e accogliente. Ecco 5 idee creative per arredare la tua camera da letto e renderla un luogo perfetto per il relax.'
+    ],
+  ],
+  '10/02/2019' => [
+    [
+      'title' => 'Ricetta della Settimana: Pasta al Pomodoro',
+      'author' => 'Giulia Verdi',
+      'text' => 'La pasta al pomodoro è un classico della cucina italiana. Segui questa semplice ricetta e prepara una deliziosa pasta al pomodoro per la tua prossima cena.'
+    ]
+  ],
+  '15/05/2019' => [
+    [
+      'title' => 'Consigli per Viaggiare in Modo Sostenibile',
+      'author' => 'Francesco Martini',
+      'text' => 'Viaggiare in modo sostenibile è importante per ridurre l\'impatto ambientale. Scopri alcuni semplici consigli per viaggiare in modo responsabile e rispettoso dell\'ambiente.'
+    ],
+    [
+      'title' => 'Come Gestire lo Stress nella Vita Quotidiana',
+      'author' => 'Valentina Rossi',
+      'text' => 'Lo stress può influire negativamente sulla nostra salute e benessere. Segui questi consigli pratici per gestire lo stress nella tua vita quotidiana e migliorare il tuo benessere.'
+    ],
+    [
+      'title' => 'Guida alla Cura delle Piante da Interno',
+      'author' => 'Giacomo Ferrari',
+      'text' => 'Le piante da interno possono portare gioia e vitalità nella tua casa. Scopri come prenderti cura delle tue piante da interno con questa semplice guida alla cura delle piante.'
+    ]
+  ],
+];
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +112,7 @@ if (empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])) {
     </section>
 
     <!-- Snack2 -->
-    <section class="my-2">
+    <section class="my-4">
       <h2 class="text-center mb-4">Verifica Accesso</h2>
       <form action="index.php" method="get">
         <div class="form-group">
@@ -92,6 +132,30 @@ if (empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])) {
       <p class="text-center mt-2">
         <?php echo $access_result; ?>
       </p>
+    </section>
+
+    <!-- Snack3 -->
+    <section class="my-4">
+      <ul>
+        <?php foreach ($posts as $date => $post_list) { ?>
+          <li>
+            Data <?php echo $date; ?>:
+            <?php foreach ($post_list as $post) { ?>
+              <ol class="mt-3">
+                <li>
+                  <?php echo $post['title']; ?>
+                </li>
+                <li>
+                  <?php echo $post['author']; ?>
+                </li>
+                <li>
+                  <?php echo $post['text']; ?>
+                </li>
+              </ol>
+            <?php } ?>
+          </li>
+        <?php } ?>
+      </ul>
     </section>
   </main>
 </body>
