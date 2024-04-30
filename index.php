@@ -91,6 +91,10 @@ while (count($random_numbers) < 10) {
     array_push($random_numbers, $random_number);
   }
 }
+
+/* Snack 5 */
+$long_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ante urna. Nulla convallis mauris a condimentum interdum. Sed commodo arcu eget sapien tristique, ut malesuada felis convallis. Sed nec neque eu odio convallis mollis. Vivamus nec semper lorem. Mauris varius dolor quis lacinia dictum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris feugiat quam sed nulla ultrices, quis sagittis purus fermentum. Nulla convallis, velit non feugiat vulputate, arcu tortor convallis purus, non vestibulum diam mauris eu magna. Proin lobortis ullamcorper enim, non ultricies nisl laoreet vel. Nulla vitae vehicula purus, a fringilla nulla. Fusce mattis est eu mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque varius bibendum orci nec fermentum. Nulla facilisi. Vivamus vitae dictum libero. Sed dignissim euismod diam, in feugiat urna efficitur vitae. Sed et lacinia nisl.";
+$ex_text = array_filter(explode(".", $long_text));
 ?>
 
 <!DOCTYPE html>
@@ -174,6 +178,13 @@ while (count($random_numbers) < 10) {
       print_r($random_numbers);
       echo "</pre>";
       ?>
+    </section>
+
+    <!-- Snack5 -->
+    <section class="my-4">
+      <?php foreach ($ex_text as $text) {
+        echo "<p>$text.</p>\n";
+      } ?>
     </section>
   </main>
 </body>
