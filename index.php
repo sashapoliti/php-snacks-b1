@@ -82,6 +82,15 @@ $posts = [
     ]
   ],
 ];
+
+/* Snack 4 */
+$random_numbers = [];
+while (count($random_numbers) < 10) {
+  $random_number = mt_rand(1, 100);
+  if (!in_array($random_number, $random_numbers)) {
+    array_push($random_numbers, $random_number);
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -156,6 +165,15 @@ $posts = [
           </li>
         <?php } ?>
       </ul>
+    </section>
+
+    <!-- Snack4 -->
+    <section class="my-4">
+      <?php
+      echo "<pre>";
+      print_r($random_numbers);
+      echo "</pre>";
+      ?>
     </section>
   </main>
 </body>
