@@ -1,3 +1,32 @@
+<?php
+$matches = [
+  [
+    "home_team" => "Olimpia Milano",
+    "guest_team" => "Cantù",
+    "points_home" => 55,
+    "points_guest" => 60
+  ],
+  [
+    "home_team" => "Virtus Bologna",
+    "guest_team" => "Varese",
+    "points_home" => 72,
+    "points_guest" => 68
+  ],
+  [
+    "home_team" => "Fortitudo Bologna",
+    "guest_team" => "Dinamo Sassari",
+    "points_home" => 78,
+    "points_guest" => 76
+  ],
+  [
+    "home_team" => "Civitavecchia",
+    "guest_team" => "Viterbo",
+    "points_home" => 90,
+    "points_guest" => 30
+  ]
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +45,14 @@
 <body>
   <main class="container">
 
+    <!-- Snack1 -->
+    <section>
+      <ul>
+        <?php foreach ($matches as $match) {
+          echo "<li>{$match["home_team"]} - {$match["guest_team"]} | {$match["points_home"]} - {$match["points_guest"]}</li>";
+          }?>
+      </ul>
+    </section>
   </main>
 </body>
 
