@@ -30,11 +30,17 @@ $matches = [
 /* Snack 2 */
 $access_result = '';
 if (empty($_GET['name']) || empty($_GET['mail']) || empty($_GET['age'])) {
-  
+
 } else {
   $name = $_GET['name'];
   $mail = $_GET['mail'];
   $age = $_GET['age'];
+
+  if (strlen($name) > 3 && str_contains($mail, '@') && str_contains($mail, '.') && is_numeric($age)) {
+    $access_result = 'Accesso riuscito';
+  } else {
+    $access_result = 'Accesso negato';
+  }
 }
 ?>
 
