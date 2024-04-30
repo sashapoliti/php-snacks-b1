@@ -119,6 +119,40 @@ $db = [
       ]
   ]
 ];
+
+/* Snack 7 */
+$class = [
+  [
+      'first_name' => 'John',
+      'last_name' => 'Doe',
+      'grades' => [8, 9, 7, 7, 8]
+  ],
+  [
+      'first_name' => 'Emma',
+      'last_name' => 'Smith',
+      'grades' => [10, 8, 9, 9, 10]
+  ],
+  [
+      'first_name' => 'Michael',
+      'last_name' => 'Johnson',
+      'grades' => [6, 8, 5, 6, 8]
+  ],
+  [
+      'first_name' => 'Emily',
+      'last_name' => 'Brown',
+      'grades' => [8, 9, 9, 8, 8]
+  ],
+  [
+      'first_name' => 'William',
+      'last_name' => 'Taylor',
+      'grades' => [4, 7, 5, 7, 7]
+  ]
+];
+
+function average($array) {
+  $average = array_sum($array) / count($array);
+  return $average;
+}
 ?>
 
 <!DOCTYPE html>
@@ -230,6 +264,15 @@ $db = [
           } ?>
         </ul>
       </div>
+    </section>
+
+    <!-- Snack7 -->
+    <section class="my-4">
+          <ul><h6>Classe</h6>
+            <?php foreach ($class as $student) {
+             echo "<li>Nome: {$student['first_name']} | Cognome: {$student['last_name']} | Media voti: " . average($student['grades']) . "</li>"; 
+            } ?>
+          </ul>
     </section>
   </main>
 </body>
