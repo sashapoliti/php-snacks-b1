@@ -1,0 +1,12 @@
+.box {
+    width: calc(100% / 2 - 50px);
+    height: 100px;
+}
+
+.grey {
+    border: 3px solid grey;
+}
+
+.green {
+    border: 3px solid green;
+}

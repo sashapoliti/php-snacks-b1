@@ -95,6 +95,30 @@ while (count($random_numbers) < 10) {
 /* Snack 5 */
 $long_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ante urna. Nulla convallis mauris a condimentum interdum. Sed commodo arcu eget sapien tristique, ut malesuada felis convallis. Sed nec neque eu odio convallis mollis. Vivamus nec semper lorem. Mauris varius dolor quis lacinia dictum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris feugiat quam sed nulla ultrices, quis sagittis purus fermentum. Nulla convallis, velit non feugiat vulputate, arcu tortor convallis purus, non vestibulum diam mauris eu magna. Proin lobortis ullamcorper enim, non ultricies nisl laoreet vel. Nulla vitae vehicula purus, a fringilla nulla. Fusce mattis est eu mollis tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque varius bibendum orci nec fermentum. Nulla facilisi. Vivamus vitae dictum libero. Sed dignissim euismod diam, in feugiat urna efficitur vitae. Sed et lacinia nisl.";
 $ex_text = array_filter(explode(".", $long_text));
+
+/* Snack 6 */
+$db = [
+  'teachers' => [
+      [
+          'name' => 'Michele',
+          'lastname' => 'Papagni'
+      ],
+      [
+          'name' => 'Fabio',
+          'lastname' => 'Forghieri'
+      ]
+  ],
+  'pm' => [
+      [
+          'name' => 'Roberto',
+          'lastname' => 'Marazzini'
+      ],
+      [
+          'name' => 'Federico',
+          'lastname' => 'Pellegrini'
+      ]
+  ]
+];
 ?>
 
 <!DOCTYPE html>
@@ -108,6 +132,7 @@ $ex_text = array_filter(explode(".", $long_text));
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
   <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/859/859354.png">
   <title>PHP Snacks 1</title>
 </head>
@@ -185,6 +210,26 @@ $ex_text = array_filter(explode(".", $long_text));
       <?php foreach ($ex_text as $text) {
         echo "<p>$text.</p>\n";
       } ?>
+    </section>
+
+    <!-- Snack6 -->
+    <section class="my-4 d-flex justify-content-between">
+      <div class="box grey">
+        <h5 class="text-center">Insegnanti</h5>
+        <ul>
+          <?php foreach ($db['teachers'] as $teacher) {
+            echo "<li>{$teacher['name']} {$teacher['lastname']}</li>";
+          } ?>
+        </ul>
+      </div>
+      <div class="box green">
+        <h5 class="text-center">PM</h5>
+        <ul>
+          <?php foreach ($db['pm'] as $pm) {
+            echo "<li>{$pm['name']} {$pm['lastname']}</li>";
+          } ?>
+        </ul>
+      </div>
     </section>
   </main>
 </body>
